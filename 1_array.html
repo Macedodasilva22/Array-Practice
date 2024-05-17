@@ -1,48 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
-  <link rel="stylesheet" href="styles.css"> <!-- Linking external CSS file -->
-</head>
-<body>
-  <div id="myDestinationDisplay"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel Ideas</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Linking external CSS file -->
+  </head>
+  <body>
+    <div id="myDestinationDisplay"></div>
 
-  <input id="destinationInput" />
-  <button onclick="pushD()">Push</button>
-  <button onclick="popD()">Pop</button>
+    <input id="destinationInput" />
+    <button onclick="pushD()">Push</button>
+    <button onclick="popD()">Pop</button>
 
-  <script>
-    let myDestination = ["barcelona", "london", "sao paulo", "thailand"];
-    console.log(myDestination);
-    myDestination.push('new york');
-    myDestination.pop();
-    
-    // Initial display of the array
-    document.getElementById('myDestinationDisplay').innerHTML = myDestination.join('<br>');
+    <script>
+      let myDestination = ["barcelona", "london", "sao paulo", "thailand"];
+      console.log(myDestination);
+      myDestination.push("new york");
+      myDestination.pop();
 
-    function pushD() {
-      let addDest = prompt("Which destination to add?");
-      if (addDest) {
-        if(myDestination.includes(addDest))
-          alert(addDest + " already exists in the list");
-      } else{
-        myDestination.push(addDest);
-        document.getElementById('myDestinationDisplay').innerHTML = myDestination.join('<br>');
+      // Initial display of the array
+      document.getElementById("myDestinationDisplay").innerHTML =
+        myDestination.join("<br>");
+
+      function pushD() {
+        let addDest = prompt("Which destination to add?");
+        if (addDest) {
+          if (myDestination.includes(addDest))
+            alert(addDest + " already exists in the list");
+        } else {
+          myDestination.push(addDest);
+          document.getElementById("myDestinationDisplay").innerHTML =
+            myDestination.join("<br>");
+        }
       }
-    }
 
-    function popD() {
-      let popDest = prompt("Which destination to pop?");
-      let index = myDestination.indexOf(popDest);
-      if (index !== -1) {
-        myDestination.splice(index, 1);
-        document.getElementById('myDestinationDisplay').innerHTML = myDestination.join('<br>');
-      } else {
-        alert(popDest  + " is not in the list.");
+      function popD() {
+        let popDest = prompt("Which destination to pop?");
+        let index = myDestination.indexOf(popDest);
+        if (index !== -1) {
+          myDestination.splice(index, 1);
+          document.getElementById("myDestinationDisplay").innerHTML =
+            myDestination.join("<br>");
+        } else {
+          alert(popDest + " is not in the list.");
+        }
       }
-    }
-  </script>
-</body>
+    </script>
+  </body>
 </html>
