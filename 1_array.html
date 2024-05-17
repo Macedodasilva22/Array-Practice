@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div id="MydestinationsDisplay"></div>
+
+    <input>
+    <button onclick="pushD()">Push</button>
+     <button onclick="popD()">Pop</button>
+    <script>
+      let myDestination = ["barcelona", "london", "sao paulo", "thailand"];
+      console.log(myDestination)
+      myDestination.push('new york')
+      myDestination.pop()
+     getElementById ('MydestinationsDisplay').innerHTML =myDestination.join('<br>')
+
+      function pushD() {
+        AddDest=prompt("which destination to add")
+        if (AddDest){
+        myDestination.push(AddDest)
+        document.getElementById('mydestinationDisplay').innerHTML = MydestinationsDisplay
+        }
+      }
+
+      function popD() {
+        PopDest=prompt("which Destination To Pop");
+        let index = myDestination.indexOf(PopDest);
+        if(index !== -1){
+       
+        myDestination.splice(index, 1);
+        document.getElementById('MydestinationsDisplay').innerHTML =MydestinationsDisplay
+        } else{
+            alert(PopDest +"is not in the list.");
+        }
+      }
+ 
+
+    </script>
+  </body>
+</html>
